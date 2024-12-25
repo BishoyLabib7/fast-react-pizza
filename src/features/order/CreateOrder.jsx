@@ -32,7 +32,8 @@ const fakeCart = [
         totalPrice: 15,
     },
 ]
-
+const inputStyle =
+    'rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 focus:outline-none focus:ring focus:ring-yellow-400 w-full md:px-6 md:py-3'
 function CreateOrder() {
     const username = useSelector((state) => state.user.username)
     const navigation = useNavigation()
@@ -50,6 +51,7 @@ function CreateOrder() {
                 <div>
                     <label>First Name</label>
                     <input
+                        className={inputStyle}
                         type="text"
                         name="customer"
                         defaultValue={username}
@@ -60,7 +62,12 @@ function CreateOrder() {
                 <div>
                     <label>Phone number</label>
                     <div>
-                        <input type="tel" name="phone" required />
+                        <input
+                            className={inputStyle}
+                            type="tel"
+                            name="phone"
+                            required
+                        />
                     </div>
                     {formError?.phone && <p>{formError.phone}</p>}
                 </div>
@@ -68,7 +75,12 @@ function CreateOrder() {
                 <div>
                     <label>Address</label>
                     <div>
-                        <input type="text" name="address" required />
+                        <input
+                            className={inputStyle}
+                            type="text"
+                            name="address"
+                            required
+                        />
                     </div>
                 </div>
 
@@ -77,6 +89,7 @@ function CreateOrder() {
                         type="checkbox"
                         name="priority"
                         id="priority"
+                        className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
                         // value={withPriority}
                         // onChange={(e) => setWithPriority(e.target.checked)}
                     />
