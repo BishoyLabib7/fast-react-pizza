@@ -4,11 +4,10 @@ import Menuitem from './MenuItem'
 
 function Menu() {
     const menu = useLoaderData()
-    console.log(menu)
     return (
         <ul>
             {menu.map((pizza) => (
-                <Menuitem pizza={pizza}></Menuitem>
+                <Menuitem pizza={pizza} key={pizza.id}></Menuitem>
             ))}
         </ul>
     )
