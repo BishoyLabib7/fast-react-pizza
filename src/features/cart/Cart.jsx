@@ -42,7 +42,7 @@ function Cart() {
             <h2>Your cart, {username}</h2>
             <ul>
                 {cart.map((item) => (
-                    <CartItem item={item} key={item.id} />
+                    <CartItem item={item} key={item.pizzaId} />
                 ))}
             </ul>
             <div>
